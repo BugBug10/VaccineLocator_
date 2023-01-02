@@ -1,0 +1,22 @@
+from sodapy import Socrata
+
+def searchLocation(zipcode):
+    """
+    returns a list of the data with state given
+    """
+    client= Socrata("data.cdc.gov",None)
+    results=client.get("5jp2-pgaw", loc_admin_zip=zipcode)
+    result=getstate(results)
+    print(result)
+   
+def getstate(lst):
+    """
+    returns the necessary information from json
+    """
+    logg=[]
+    for x in lst:
+        boo=[]
+        for key in x:
+            boo.append(x[key])
+        logg.append(boo)
+    return logg
