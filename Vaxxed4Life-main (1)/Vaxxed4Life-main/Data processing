@@ -13,10 +13,10 @@ def getstate(lst):
     """
     returns the necessary information from json
     """
-    logg=[]
+    outerlist=[]
     for x in lst:
-        boo=[]
+        innerlist=[]
         for key in x:
-            boo.append(x[key])
-        logg.append(boo)
-    return logg
+            innerlist.append(x[key])
+        outerlist.append(innerlist)
+    return outerlst
