@@ -31,13 +31,10 @@ def getstate(lst):
     """
     returns the necessary information from json
     """
-    #address=[]
-    loggy=[]
+    outerlist=[]
     for x in lst:
-        boo=[]
-    #    if x['provider_location_guid'] not in address:
-            #address.append(x['provider_location_guid'])
+        innerlist=[]
         for key in x:
-                boo.append(x[key])
-        loggy.append(boo)
-    return loggy
+                innerlist.append(x[key])
+        outerlist.append(innerlist)
+    return outerlist
